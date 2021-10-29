@@ -1,0 +1,19 @@
+{
+	"name": "Relative Bookmarks",
+	"version": "1.0",
+	"manifest_version": 3,
+	"background": {
+		"service_worker": "background.js"
+	},
+	"icons": {
+		"128": "icon_128.png"
+	},
+	"action": {
+		"default_icon": {
+			"128": "icon_128.png"
+		},
+		"default_title": "Add relative bookmark",
+		"default_popup": "popup.html"
+	},
+	"permissions": ["bookmarks", "activeTab"]
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Add Relative bookmark</title>
+	</head>
+	<body>
+		<header>Added Relative Bookmark</header>
+		<div class="fields">
+			<label>
+				Title
+				<input
+					id="title"
+					name="title"
+					type="text"
+					title="Title"
+					autocomplete="off"
+					aria-autocomplete="none"
+				/>
+			</label>
+			<div id="advanced-panel" class="advanced">
+				<label>
+					Path
+					<input
+						id="path"
+						name="path"
+						type="text"
+						title="Path"
+						autocomplete="off"
+						aria-autocomplete="none"
+					/>
+				</label>
+				<label>
+					Query
+					<input
+						id="query"
+						name="query"
+						type="text"
+						title="Query string"
+						autocomplete="off"
+						aria-autocomplete="none"
+					/>
+				</label>
+				<div class="checks">
+					<label>
+						<input id="query-mix" type="checkbox" />
+						Mix with existing
+					</label>
+					<label>
+						<input id="query-override" type="checkbox" />
+						Override
+					</label>
+				</div>
+				<label>
+					Hash
+					<input
+						id="hash"
+						name="hash"
+						type="text"
+						title="Hash"
+						autocomplete="off"
+						aria-autocomplete="none"
+					/>
+				</label>
+			</div>
+		</div>
+		<div id="folders" class="folders"></div>
+		<footer>
+			<div>
+				<button id="add-btn" class="primary">Done</button>
+				<button id="cancel-btn" class="secondary">Remove</button>
+			</div>
+			<button id="advanced-btn">Advanced</button>
+		</footer>
+	</body>
+</html>

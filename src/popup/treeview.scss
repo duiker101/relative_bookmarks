@@ -1,0 +1,48 @@
+.folders {
+	user-select: none;
+	height: 12rem;
+	overflow-y: auto;
+	overflow-x: auto;
+	padding: 4px 4px 4px 13px;
+	margin-top: 4px;
+	font-size: 12px;
+	border-top: 1px solid #2e2f37;
+}
+
+.expandable > .title {
+	position: relative;
+	&::before {
+		content: "▼";
+		font-size: 0.8em;
+		position: absolute;
+		top: 4px;
+		left: -10px;
+		color: #bbb;
+		transition: all 100ms linear;
+		transform: rotateZ(-90deg);
+	}
+}
+
+.expandable.open > .title::before {
+	transform: rotateZ(0deg);
+}
+
+.children {
+	display: none;
+	padding-left: 10px;
+}
+
+.title {
+	padding: 2px;
+	border: 1px solid transparent;
+	&.selected {
+		border: 1px solid #3568cc;
+		background: #6286d7;
+		color: white;
+		cursor: pointer;
+	}
+}
+
+.open > .children {
+	display: block;
+}

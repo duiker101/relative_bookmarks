@@ -1,0 +1,98 @@
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji";
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	width: 300px;
+}
+
+input[type="text"] {
+	padding: 4px;
+	border-radius: 4px;
+	border: 1px solid #bbbbbb;
+	flex: 1;
+	margin: 4px 4px 4px 12px;
+}
+
+label {
+	display: flex;
+	align-items: center;
+	user-select: none;
+}
+
+button {
+	margin: 4px;
+	border: none;
+	border-radius: 4px;
+	background: #bbbbbb;
+	padding: 10px 20px;
+	transition: all 200ms ease-in-out;
+	cursor: pointer;
+	user-select: none;
+
+	&.secondary {
+		opacity: 0.6;
+	}
+
+	&:hover {
+		opacity: 1;
+		background: #e0e0e5;
+	}
+}
+
+label {
+	margin: 4px;
+}
+
+header {
+	padding: 0.5em;
+	font-size: large;
+	font-weight: 500;
+	margin-bottom: 12px;
+}
+
+footer {
+	margin-top: 12px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.fields {
+	padding: 4px;
+}
+
+.advanced {
+	display: none;
+	&.open {
+		display: block;
+	}
+}
+
+.checks {
+	display: flex;
+	margin-left: 40px;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #363739;
+		color: #cad0da;
+	}
+	input {
+		color: #cad0da;
+		border: 1px solid #4c4d56;
+		background: #4c4d56;
+	}
+	button {
+		background: #4c4d56;
+		color: #cad0da;
+		&:hover {
+			background: #696a73;
+		}
+	}
+	header,
+	footer {
+		background: #2e2f37;
+	}
+}
