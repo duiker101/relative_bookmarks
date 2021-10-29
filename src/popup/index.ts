@@ -47,6 +47,13 @@ document.getElementById("advanced-btn")?.addEventListener("click", async () => {
 	document.getElementById("advanced-panel")?.classList.toggle("open");
 });
 
+document.getElementById("cancel-btn")?.addEventListener("click", async () => {
+	if (savedBookmark) {
+		await chrome.bookmarks.remove(savedBookmark.id);
+	}
+	window.close();
+});
+
 const queryMix = document.getElementById("query-mix") as HTMLInputElement;
 const queryOverride = document.getElementById("query-override") as HTMLInputElement;
 queryOverride.disabled = true;
