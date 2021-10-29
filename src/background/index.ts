@@ -22,6 +22,9 @@ async function createRelativeBookmark(
 	title: string,
 	request: SaveRequest
 ) {
+	if (!bookmark_id) {
+		bookmark = null;
+	}
 	const base_data = btoa(JSON.stringify(request));
 	const javascript_url = `javascript:${bookmarklet};relative_mark_101("${base_data}")`;
 
@@ -47,7 +50,6 @@ async function createRelativeBookmark(
 
 chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 	const { action, ...request_data } = request;
-	console.log("bg msg", request)
 	if (action === "save") {
 		const { folder_id, bookmark_id, title, ...save_data } = request_data;
 		await createRelativeBookmark(bookmark_id, folder_id, title, save_data);

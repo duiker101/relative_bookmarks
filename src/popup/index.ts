@@ -2,7 +2,6 @@ import "./index.scss";
 
 import { renderTree, selectedFolder } from "./treeview";
 import BookmarkTreeNode = chrome.bookmarks.BookmarkTreeNode;
-import Tab = chrome.tabs.Tab;
 
 let savedBookmark: BookmarkTreeNode | null = null;
 
@@ -10,23 +9,22 @@ function getInput(id: string) {
 	return document.getElementById(id) as HTMLInputElement;
 }
 
-chrome.runtime.onMessage.addListener(async (request)=>{
-	console.log("msg", request)
-	if(request.action === "saved"){
-		savedBookmark = request.bookmark
+chrome.runtime.onMessage.addListener(async (request) => {
+	if (request.action === "saved") {
+		savedBookmark = request.bookmark;
 	}
-})
+});
 
 function saveBookmark() {
 	const title = getInput("title").value;
 	const path = getInput("path").value;
 
 	let hash = getInput("hash").value;
-	if (!hash.startsWith("#")) {
+	if (hash.length > 0 && !hash.startsWith("#")) {
 		hash = "#" + hash;
 	}
 	let query = getInput("query").value;
-	if (!query.startsWith("?")) {
+	if (query.length > 0 && !query.startsWith("?")) {
 		query = "?" + query;
 	}
 	const query_mix = getInput("query-mix").checked;
@@ -66,7 +64,7 @@ async function main() {
 	renderTree(1, folders_root, bookmarks);
 
 	const url = new URL(tab.url || "");
-	getInput("title").value = "Rel: "+(tab.title || "");
+	getInput("title").value = "Rel: " + (tab.title || "");
 	getInput("path").value = url.pathname;
 	getInput("hash").value = url.hash;
 	getInput("query").value = url.search;
@@ -75,7 +73,7 @@ async function main() {
 }
 
 document.getElementById("add-btn")?.addEventListener("click", async () => {
-	saveBookmark()
+	saveBookmark();
 });
 
 main();
