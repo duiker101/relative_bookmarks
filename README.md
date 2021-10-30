@@ -8,7 +8,7 @@ _Add relative bookmarks to your browser._
 
 ## Installation Instructions
 
--   Go to the Chrome Store page
+-   Go to the [Chrome Web Store page](https://chrome.google.com/webstore/detail/relative-bookmarks/akhdmejeagnbocfdcmnpgogbonodhkcn/)
 -   Add it to your browser
 
 ## Functionality
